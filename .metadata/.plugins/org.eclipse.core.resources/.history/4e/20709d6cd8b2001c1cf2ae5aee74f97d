@@ -1,0 +1,13 @@
+#include <avr/io.h>
+
+
+void main(void)
+{
+DDRA = 0xff;
+//PORTA = 0xff;
+
+
+
+}
+
+

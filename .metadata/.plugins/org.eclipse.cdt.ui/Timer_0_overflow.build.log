@@ -1,0 +1,39 @@
+19:14:06 **** Incremental Build of configuration Debug for project Timer_0_overflow ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:37: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: Timer_0_overflow.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Timer_0_overflow.map -mmcu=atmega32 -o "Timer_0_overflow.elf"  ./DIO_Program.o ./main.o   
+Finished building target: Timer_0_overflow.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Timer_0_overflow.elf  >"Timer_0_overflow.lss"
+Finished building: Timer_0_overflow.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Timer_0_overflow.elf  "Timer_0_overflow.hex"
+Finished building: Timer_0_overflow.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Timer_0_overflow.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2080 bytes (6.3% Full)
+(.text + .data + .bootloader)
+
+Data:          7 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:14:07 Build Finished (took 671ms)
+

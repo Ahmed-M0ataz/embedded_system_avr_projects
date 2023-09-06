@@ -1,0 +1,39 @@
+20:21:56 **** Incremental Build of configuration Debug for project free_rtos_lab3 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:48: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: free_rtos_lab3.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,free_rtos_lab3.map -mmcu=atmega32 -o "free_rtos_lab3.elf"  ./DIO_program.o ./croutine.o ./event_groups.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: free_rtos_lab3.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S free_rtos_lab3.elf  >"free_rtos_lab3.lss"
+Finished building: free_rtos_lab3.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex free_rtos_lab3.elf  "free_rtos_lab3.hex"
+Finished building: free_rtos_lab3.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 free_rtos_lab3.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15854 bytes (48.4% Full)
+(.text + .data + .bootloader)
+
+Data:        711 bytes (34.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:21:57 Build Finished (took 923ms)
+

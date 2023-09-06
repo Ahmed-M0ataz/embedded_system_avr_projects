@@ -1,0 +1,7 @@
+18:32:01 **** Clean-only build of configuration Debug for project timer_0_compare_match ****
+make clean 
+rm -rf  timer_0_compare_match.hex  ./ADC_PROGRAM.o ./DIO_Program.o ./main.o  sizedummy  timer_0_compare_match.lss  ./ADC_PROGRAM.d ./DIO_Program.d ./main.d  timer_0_compare_match.elf
+ 
+
+18:32:02 Build Finished (took 1s.567ms)
+

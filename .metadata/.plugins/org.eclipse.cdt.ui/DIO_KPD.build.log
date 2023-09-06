@@ -1,0 +1,46 @@
+20:44:39 **** Incremental Build of configuration Debug for project DIO_KPD ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:10:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../main.c:11:
+e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:11:
+e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:19: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: DIO_KPD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,DIO_KPD.map -mmcu=atmega32 -o "DIO_KPD.elf"  ./DIO_Program.o ./LCD_Program.o ./kpd_program.o ./main.o   
+Finished building target: DIO_KPD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S DIO_KPD.elf  >"DIO_KPD.lss"
+Finished building: DIO_KPD.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex DIO_KPD.elf  "DIO_KPD.hex"
+Finished building: DIO_KPD.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 DIO_KPD.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7956 bytes (24.3% Full)
+(.text + .data + .bootloader)
+
+Data:         16 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+20:44:39 Build Finished (took 781ms)
+

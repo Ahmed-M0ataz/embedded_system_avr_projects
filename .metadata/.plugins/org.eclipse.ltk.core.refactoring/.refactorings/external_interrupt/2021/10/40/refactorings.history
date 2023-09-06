@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;external_interrupt/program.c&apos; to &apos;EXT_interrpt_program.c&apos;" description="Rename resource &apos;program.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="program.c" name="EXT_interrpt_program.c" stamp="1633194754741" updateReferences="true"/>
+</session>

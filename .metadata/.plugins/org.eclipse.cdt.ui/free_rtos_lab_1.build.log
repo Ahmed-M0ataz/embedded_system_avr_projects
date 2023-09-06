@@ -1,0 +1,46 @@
+21:46:09 **** Incremental Build of configuration Debug for project free_rtos_lab_1 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../main.c:14:
+e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:14:
+e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c:49: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: free_rtos_lab_1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,free_rtos_lab_1.map -mmcu=atmega32 -o "free_rtos_lab_1.elf"  ./DIO_program.o ./croutine.o ./event_groups.o ./heap_1.o ./list.o ./main.o ./port.o ./queue.o ./tasks.o ./timers.o   
+Finished building target: free_rtos_lab_1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S free_rtos_lab_1.elf  >"free_rtos_lab_1.lss"
+Finished building: free_rtos_lab_1.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex free_rtos_lab_1.elf  "free_rtos_lab_1.hex"
+Finished building: free_rtos_lab_1.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 free_rtos_lab_1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15814 bytes (48.3% Full)
+(.text + .data + .bootloader)
+
+Data:        712 bytes (34.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+21:46:09 Build Finished (took 977ms)
+

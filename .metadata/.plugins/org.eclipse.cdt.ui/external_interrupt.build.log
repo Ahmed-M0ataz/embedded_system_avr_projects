@@ -1,0 +1,49 @@
+11:46:34 **** Incremental Build of configuration Debug for project external_interrupt ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:10:1: warning: "F_CPU" redefined
+<command-line>: warning: this is the location of the previous definition
+In file included from ../main.c:11:
+e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../main.c:11:
+e:/imt_school/material/after lec 10/es_concepts/imt_sdk_win_64/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+In file included from ../main.c:14:
+../EXT_interrpt_interface.h:39: warning: data definition has no type or storage class
+../EXT_interrpt_interface.h:39: warning: type defaults to 'int' in declaration of 'set_call_back'
+../main.c:26: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: external_interrupt.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,external_interrupt.map -mmcu=atmega32 -o "external_interrupt.elf"  ./DIO_Program.o ./EXT_interrpt_program.o ./main.o   
+Finished building target: external_interrupt.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S external_interrupt.elf  >"external_interrupt.lss"
+Finished building: external_interrupt.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex external_interrupt.elf  "external_interrupt.hex"
+Finished building: external_interrupt.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 external_interrupt.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2740 bytes (8.4% Full)
+(.text + .data + .bootloader)
+
+Data:          7 bytes (0.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+11:46:35 Build Finished (took 804ms)
+

@@ -1,0 +1,215 @@
+/*
+ * main.c
+ *
+ *  Created on: Sep 26, 2021
+ *      Author: Ahmed Moataz
+ */
+
+
+#include"BIT_CALC.h"
+#include"STD_TYPES.h"
+#define F_CPU 8000000
+#include"avr/delay.h"
+#include "DIO_Interface.h"
+
+#include"LCD_Cofiguration.h"
+#include"LCD_Private.h"
+#include"LCD_Interface.h"
+#include "kpd_Interface.h"
+
+
+void main (void)
+{u8 local_key,num1=0,num2=0,operation=0,frist_sec_num=0,equel,answer=0;
+	//u8 arr[kpd_no_keys];
+	LCD_Intialization();
+	kpd_set_init();
+	//go_pos(5,1);
+	//write_num (1258);
+	//LCD_WRITE_num(1554);
+
+
+while(1)
+{
+	//num1=0,num2=0;
+
+	do
+	{
+	local_key=kpd_pressed_key();
+	}while(local_key==255);/*عشان لو انا مدوستش علي حاجه يعني مثلا طول منا مش دايس حاجه اقعد روح هات القيمه بتاعت المتغير*/
+//	send_data(local_key);
+
+if((frist_sec_num==0)&&(local_key=='1'||local_key=='2'||local_key=='3'||local_key=='4'||local_key=='5'||local_key=='6'||local_key=='7'||local_key=='8'||local_key=='9'||local_key=='0'))
+{	//if(frist_sec_num==0)
+	//{
+		//num1=(num1*10)+(local_key-0x30);
+	go_pos(0,0);
+
+	num1=local_key;
+	send_data(num1);
+
+	frist_sec_num++;
+	//}
+	/*else
+	{
+	num2=local_key;
+		send_data(num2);
+	}*/
+
+}
+else if (local_key=='+'||local_key=='-'||local_key=='*'||local_key=='/')
+{			go_pos(0,0);
+send_data(num1);
+
+	operation=local_key;
+			send_data(operation);
+
+
+}
+else if ((frist_sec_num!=0)&&(local_key=='1'||local_key=='2'||local_key=='3'||local_key=='4'||local_key=='5'||local_key=='6'||local_key=='7'||local_key=='8'||local_key=='9'||local_key=='0'))
+	{
+	num2=local_key;
+	go_pos(0,0);
+
+
+	//num2=(num2*10)+(local_key-0x30);
+	send_data(num1);
+
+		send_data(operation);
+		send_data(num2);
+
+	}
+else if (local_key== '=')
+
+
+{equel=local_key;
+go_pos(0,0);
+send_data(num1);
+
+		send_data(operation);
+		send_data(num2);
+send_data(equel);
+frist_sec_num=0;
+	if (operation== '+')
+	{			go_pos(0,0);
+	send_data(num1);
+
+			send_data(operation);
+			send_data(num2);
+	send_data(equel);
+		answer= num1 + num2 ;
+		LCD_WRITE_num(answer);
+	}
+	else if (operation== '-')
+	{
+		answer= num1 - num2 ;
+
+		send_data(answer);
+
+	}
+	else if (operation== '*')
+		{
+			answer= num1 * num2 ;
+			send_data(answer);
+
+
+		}
+	else if (operation== '/')
+			{
+				answer= num1 / num2 ;
+
+				send_data(answer);
+
+			}
+
+	//LCD_write_cmd(0b00000001);
+	//send_data(answer);
+
+}
+else if (operation== 'C')
+			{
+		LCD_write_cmd(0b00000001);//clean lcd
+
+
+			}
+}
+}
+	//	kpd_get_state(arr);
+//	LCD_WRITE_num(1,0,0);
+
+
+	/*	if (arr[0][0]==local_key)
+		{
+			LCD_WRITE_num(1);
+_delay_ms(250);
+break;
+		}
+		else if (arr[0][1]==kpd_pressed)
+		{
+			LCD_WRITE_num(2);_delay_ms(250);
+
+break;
+		}
+		else if (arr[0]2==kpd_pressed)
+			{
+				LCD_WRITE_num(3);_delay_ms(250);
+
+break;
+			}
+		else if (arr[4]==kpd_pressed)
+			{
+				LCD_WRITE_num(4);_delay_ms(250);
+
+
+			}
+		else if (arr[5]==kpd_pressed)
+			{
+				LCD_WRITE_num(0);
+
+			}
+		else if (arr[6]==kpd_pressed)
+			{
+				LCD_WRITE_num(6);
+
+			}
+		else if (arr[8]==kpd_pressed)
+			{
+				LCD_WRITE_num(7);
+
+			}
+		else if (arr[9]==kpd_pressed)
+			{
+				LCD_WRITE_num(8);
+
+			}
+		else if (arr[10]==kpd_pressed)
+				{
+					LCD_WRITE_num(9);
+
+				}
+		else if (arr[13]==kpd_pressed)
+				{
+					LCD_WRITE_num(5);
+
+				}
+		else if (arr[14]==kpd_pressed)
+						{
+							LCD_WRITE_num(6);
+
+						}
+		else
+			{
+			all_col_high();
+
+
+			}
+
+
+	}}
+	//x_pos++;*/
+//}}
+
+
+
+
+
+

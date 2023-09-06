@@ -1,0 +1,33 @@
+19:30:16 **** Incremental Build of configuration Debug for project timer0_fast_pwm ****
+make all 
+Building target: timer0_fast_pwm.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer0_fast_pwm.map -mmcu=atmega32 -o "timer0_fast_pwm.elf"  ./ADC_PROGRAM.o ./DIO_Program.o ./main.o   
+Finished building target: timer0_fast_pwm.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer0_fast_pwm.elf  >"timer0_fast_pwm.lss"
+Finished building: timer0_fast_pwm.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex timer0_fast_pwm.elf  "timer0_fast_pwm.hex"
+Finished building: timer0_fast_pwm.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer0_fast_pwm.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    2092 bytes (6.4% Full)
+(.text + .data + .bootloader)
+
+Data:          5 bytes (0.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:30:17 Build Finished (took 744ms)
+

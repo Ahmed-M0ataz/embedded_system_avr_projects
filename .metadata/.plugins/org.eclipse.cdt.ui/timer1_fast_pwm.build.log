@@ -1,0 +1,20 @@
+23:34:51 **** Build of configuration Debug for project timer1_fast_pwm ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer1_fast_pwm.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5234 bytes (16.0% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+23:34:52 Build Finished (took 693ms)
+

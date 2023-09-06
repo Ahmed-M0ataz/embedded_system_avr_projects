@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;make_include_io&apos; to &apos;DIO_DRIVER&apos;" description="Rename resource &apos;make_include_io&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/make_include_io" name="DIO_DRIVER" stamp="1631284962468" updateReferences="true"/>
+</session>

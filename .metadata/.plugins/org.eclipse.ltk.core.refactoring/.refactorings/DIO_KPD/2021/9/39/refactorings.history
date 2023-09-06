@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DIO_KPD/program.c&apos; to &apos;kpd_program.c&apos;" description="Rename resource &apos;program.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="program.c" name="kpd_program.c" stamp="1632486775805" updateReferences="true"/>
+</session>

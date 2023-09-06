@@ -1,0 +1,20 @@
+19:04:36 **** Incremental Build of configuration Debug for project ICU_timer_1_EXT_INTERUPT_0 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 ICU_timer_1_EXT_INTERUPT_0.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9360 bytes (28.6% Full)
+(.text + .data + .bootloader)
+
+Data:         29 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+19:04:37 Build Finished (took 1s.88ms)
+

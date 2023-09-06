@@ -1,0 +1,19 @@
+/*
+ * main.c
+ *
+ *  Created on: Apr 3, 2022
+ *      Author: Ahmed_Moataz
+ */
+#include "avr/io.h"
+
+
+void main()
+{
+DDRA = 0xff;
+PORTA = 0xff;
+
+
+
+}
+
+ 	 l
